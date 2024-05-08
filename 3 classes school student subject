@@ -1,0 +1,86 @@
+Create 3 classes school student subject and display the result using student object? 
+
+CODE //-----------------------------------------------------------------------
+
+class School {
+    private String name;
+    private String address;
+
+    public School(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+}
+
+// Subject class
+class Subject {
+    private String name;
+    private int credits;
+
+    public Subject(String name, int credits) {
+        this.name = name;
+        this.credits = credits;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCredits() {
+        return credits;
+    }
+}
+
+// Student class
+class Student {
+    private String name;
+    private int age;
+    private School school;
+    private Subject[] subjects;
+
+    public Student(String name, int age, School school, Subject[] subjects) {
+        this.name = name;
+        this.age = age;
+        this.school = school;
+        this.subjects = subjects;
+    }
+
+    public void displayStudentInfo() { // ye student class ka method he
+        System.out.println("Student Name: " + name);
+        System.out.println("Student Age: " + age);
+        System.out.println("School Name: " + school.getName());
+        System.out.println("School Address: " + school.getAddress());
+        System.out.println("Subjects:");
+        for (Subject subject : subjects) {
+            System.out.println("- " + subject.getName() + " (" + subject.getCredits() + " credits)");
+        }
+    }
+}
+
+public class Mainw {
+    public static void main(String[] args) {
+        // Create a school
+        School school = new School("Mera School", "Meri Gali");
+
+        // Create subjects
+        Subject math = new Subject("Mathematics", 4);
+        Subject physics = new Subject("Physics", 3);
+        Subject biology = new Subject("Biology", 3);
+        Subject chemistry = new Subject("Chemistry", 3);
+
+        // Create a student
+        Subject[] studentSubjects = {math,physics,biology,chemistry};
+        Student student = new Student("Hitesh Pandey", 22, school, studentSubjects);
+
+        // Display student information
+        student.displayStudentInfo();
+    }
+}
