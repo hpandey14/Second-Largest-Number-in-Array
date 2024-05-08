@@ -1,0 +1,30 @@
+Questions:
+0-100 units=2 per unit 50 unit =100
+101-150=3 per unit	110 unit = 200 + (10*3)30 =230
+151-200=4 per unit
+201-250=5 per unit
+251-300=6 per unit
+301-500 = 7 per unit
+501 and above=8 per unit
+According to the rate list above generate electricity bill for customer.....
+
+CODE //.......................................................................................................
+
+public class ElectricityBillCalculator {
+
+    public static void main(String[] args) {
+        int unitsConsumed = 1100; // Sample units consumed
+
+        // Calculate bill using nested ternary operators
+        int billAmount = (unitsConsumed <= 50) ? unitsConsumed * 2 :
+                (unitsConsumed <= 150) ? (100 + (unitsConsumed - 50) * 3) :
+                        (unitsConsumed <= 200) ? (200 + (unitsConsumed - 150) * 4) :
+                                (unitsConsumed <= 250) ? (300 + (unitsConsumed - 200) * 5) :
+                                        (unitsConsumed <= 300) ? (400 + (unitsConsumed - 250) * 6) :
+                                                (unitsConsumed <= 500) ? (700 + (unitsConsumed - 300) * 7) :
+                                                        (700 + (unitsConsumed - 500) * 8);
+
+        System.out.println("Electricity bill amount: $" + billAmount);
+    }
+}
+
