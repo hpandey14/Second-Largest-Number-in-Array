@@ -1,0 +1,51 @@
+Hirerichal Inheritance
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+// Vehicle class
+class Vehicle {
+    void display() {
+        System.out.println("This is a vehicle.");
+    }
+}
+
+// Car class inheriting from Vehicle
+class Car extends Vehicle {
+    void display() {
+        System.out.println("This is a car.");
+    }
+
+    void drive() {
+        System.out.println("Driving the car.");
+    }
+}
+
+// Motorcycle class inheriting from Vehicle
+class Motorcycle extends Vehicle {
+    void display() {
+        System.out.println("This is a motorcycle.");
+    }
+
+    void ride() {
+        System.out.println("Riding the motorcycle.");
+    }
+}
+
+// Main class to test the inheritance
+public class Main {
+    public static void main(String[] args) {
+        // Creating objects of Car and Motorcycle
+        Car car = new Car();
+        Motorcycle motorcycle = new Motorcycle();
+
+        // Calling display method of each class
+        car.display();       // Output: This is a car.
+        motorcycle.display(); // Output: This is a motorcycle.
+
+        // Calling drive method of Car class
+        car.drive(); // Output: Driving the car.
+
+        // Calling ride method of Motorcycle class
+        motorcycle.ride(); // Output: Riding the motorcycle.
+    }
+}
