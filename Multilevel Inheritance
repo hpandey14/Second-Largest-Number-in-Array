@@ -1,0 +1,33 @@
+Multilevel Inheritance 
+
+/////////////////////////////////////////////////////////////////////////////////
+
+// Parent class bna di
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+// Subclass inheriting from Animal
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+// Subclass inheriting from Dog
+class Labrador extends Dog {
+    void color() {
+        System.out.println("Labrador is pink in color");
+    }
+}
+
+public class Multilevel {
+    public static void main(String[] args) {
+        Labrador labrador = new Labrador();
+        labrador.eat();   // inherited from Animal
+        labrador.bark();  // inherited from Dog
+        labrador.color(); // specific to Labrador
+    }
+}
