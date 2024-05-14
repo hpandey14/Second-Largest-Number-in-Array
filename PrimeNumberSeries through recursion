@@ -1,0 +1,34 @@
+Q. PrimeNumberSeries through recursion
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+CODE:
+
+public class PrimeNumberSeries {
+
+    // Function to check if a number is prime
+    private static boolean isPrime(int num, int divisor) {
+        if (divisor <= 1) {
+            return true;
+        }
+        if (num % divisor == 0) {
+            return false;
+        }
+        return isPrime(num, divisor - 1);
+    }
+
+    // Function to generate prime numbers up to a given limit recursively
+    private static void generatePrimes(int limit, int num) {
+        if (num <= limit) {
+            if (isPrime(num, num / 2)) {
+                System.out.print(num + " ");
+            }
+            generatePrimes(limit, num + 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        int limit = 50; // Change the limit as per your requirement
+        System.out.println("Prime numbers up to " + limit + " are:");
+        generatePrimes(limit, 2);
+    }
+}
