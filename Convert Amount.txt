@@ -1,0 +1,22 @@
+public class ConvertAmount {
+
+    public static void main(String[] args) {
+        String amountString = "$2000";
+
+        // Remove the dollar sign
+        String numberString = amountString.substring(1);
+
+        // Convert the string to an integer
+        int number = Integer.parseInt(numberString);
+
+        // Increment the number by 1
+        number++;
+
+        // Convert the incremented number back to a string
+        String newAmountString = Integer.toString(number);
+
+        // Print the final result without the dollar sign
+        System.out.println(newAmountString);
+    }
+}
+
